@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\V1\ParkingController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-
 Route::apiResources([
     'parkings' => ParkingController::class
 ]);
+
+
+Route::post('login', [LoginController::class, 'index']);

@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 
-import Vue from 'vue'
+import * as Vue from 'vue'
 
 
 Vue.component('app', require('./components/App').default)
