@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\ParkingController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\AuthenticationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +26,6 @@ Route::apiResources([
 ]);
 
 
-Route::post('login', [LoginController::class, 'index']);
+Route::post('login', [AuthenticationController::class, 'login']);
+
+// Route::post('refresh', [AuthenticationController::class, 'refresh']);

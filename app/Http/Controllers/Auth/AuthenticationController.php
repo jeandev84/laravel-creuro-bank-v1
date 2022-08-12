@@ -9,14 +9,14 @@ use Illuminate\Http\Response;
 /**
  *
 */
-class LoginController extends Controller
+class AuthenticationController extends Controller
 {
 
        /**
         * @param Request $request
         * @return \Illuminate\Http\JsonResponse
-        */
-       public function index(Request $request)
+       */
+       public function login(Request $request)
        {
             $credentials = $request->only(['email', 'password']);
 
@@ -29,5 +29,29 @@ class LoginController extends Controller
             }
 
             return response()->json(['token' => $token]);
+       }
+
+
+
+       public function refresh()
+       {
+           try {
+
+               // TODO implements logic reflesh token
+
+               $token = 'kcccc-eeee-abbbbuk'; // fake
+
+               // $token = auth()->refresh();
+
+           } catch (\Exception $e) {
+
+               return \response()->json([
+                   'error' => true,
+                   'message' => $e->getMessage()
+               ], Response::HTTP_UNAUTHORIZED);
+           }
+
+
+           return \response()->json(['token' => $token]);
        }
 }
