@@ -4,7 +4,20 @@
 ```php 
 $ composer install
 ```
-2. Конфигурация ```.env``` файл 
+2. Конфигурация базы данных в файле ```.env``` 
+```php 
+...
+
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=europabank
+DB_USERNAME=postgres
+DB_PASSWORD=123456
+
+...
+```
+
 3. Создание базы данных проекта.
 4. Выполнение миграции
 ```php 
