@@ -17,3 +17,8 @@ $ php artisan jwt:secret
 JWT_TTL=1800
 JWT_SECRET=YourSecretKeyHashed
 ```
+
+6. Запуск сервера
+```php 
+$ php artisan serve
+```
