@@ -33,15 +33,16 @@ class AuthenticationController extends Controller
 
 
 
+      /**
+       * Refresh token
+       *
+       * @return \Illuminate\Http\JsonResponse
+       */
        public function refresh()
        {
            try {
 
-               // TODO implements logic reflesh token
-
-               $token = 'kcccc-eeee-abbbbuk'; // fake
-
-               // $token = auth()->refresh();
+               $token = auth()->refresh();
 
            } catch (\Exception $e) {
 

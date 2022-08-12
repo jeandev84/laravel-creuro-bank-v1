@@ -21,11 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResources([
-    'parkings' => ParkingController::class
-]);
-
 
 Route::post('login', [AuthenticationController::class, 'login']);
 
-// Route::post('refresh', [AuthenticationController::class, 'refresh']);
+Route::group(['middleware' => ['jwt.verify']], function () {
+
+    Route::apiResources([
+        'parkings' => ParkingController::class
+    ]);
+
+    Route::post('refresh', [AuthenticationController::class, 'refresh']);
+
+});
