@@ -14,6 +14,6 @@ class Parking extends Model
 
 
       protected $fillable = [
-         'id', 'city', 'address_parking'
+         'city', 'address_parking'
       ];
 }
